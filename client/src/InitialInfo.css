@@ -1,0 +1,36 @@
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+.init-container{
+  margin:30px;
+  height: 70vh;
+}
+.infoForm{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header{
+ text-align: center;
+}
+
+.searchBar{
+  width: 50%;
+  font-size: 1.5em;
+}
+.dropdown-container{
+  top: 0%;
+
+}
+.submitButton{
+  position:relative;
+  left:0%;
+  margin-top: 50px;
+
+}
+
+.listings{
+  height:10vh;
+}

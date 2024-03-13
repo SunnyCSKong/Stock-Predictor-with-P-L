@@ -1,0 +1,43 @@
+body {
+    font-family: Helvetica, sans-serif;
+}
+.searchContainer{
+  height:100%;
+}
+.infoForm{
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.symbols{
+  font-size: 1em;
+  padding:5px;
+}
+
+.symbols:hover{
+  cursor: pointer;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.searchBar{
+  width: 50%;
+  font-size: 1.5em;
+}
+.averagesContainer{
+  position:absolute;
+  top: 0%;
+  transform: translateY(13em);
+}
+.averages{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
