@@ -500,7 +500,7 @@ def generate_predictions(symbol,average_type):
     #print(buy_sell(call,strike_call.iloc[atm_call],put,strike_put.iloc[atm_put]))
     collar_bsm =buy_sell(call,strike_call.lastPrice,put,strike_put.lastPrice)
     net_premium = (call- put)
-    collar_print= f"Buying options that expire in {days} days and calls and puts at strike price {strike_call.strike}"
+    collar_print= f"Buying options that expire in {days} days and calls and puts at strike price: ${strike_call.strike}"
     prices = np.arange(curr_price*0.8,curr_price*1.2,0.1)
     collar_list = []
     #for chart
@@ -546,7 +546,7 @@ def generate_predictions(symbol,average_type):
     straddle_bsm = buy_sell(call,call_options.iloc[straddle_call].lastPrice,put,put_options.iloc[straddle_put].lastPrice)
     underlying_prices = np.arange(curr_price*0.8,curr_price*1.2)
     straddle_profit = []
-    straddle_print=f'Purchasing a call AND put at strike: {call_options.iloc[straddle_call].strike} that expire in {days}'
+    straddle_print=f'Purchasing a call AND put at strike: ${call_options.iloc[straddle_call].strike} that expire in {days} days.'
     #print(f'Purchasing a call AND put at strike: {call_options.iloc[straddle_call].strike}')
     #for chart
     for price in underlying_prices:
@@ -579,7 +579,7 @@ def generate_predictions(symbol,average_type):
     strangle_bsm =buy_sell(call,call_options.iloc[strangle_call].lastPrice,put,put_options.iloc[strangle_put].lastPrice)
     strangle_profit = []
     #print(f'Purchasing a call at: {call_options.iloc[strangle_call].strike} and put at : {put_options.iloc[strangle_put].strike}')
-    strangle_print = f'Purchasing a call at: {call_options.iloc[strangle_call].strike} and put at : {put_options.iloc[strangle_put].strike} that both expire in {days}'
+    strangle_print = f'Purchasing a call at: ${call_options.iloc[strangle_call].strike} and put at: ${put_options.iloc[strangle_put].strike} that both expire in {days} days'
     #for chart
     for price in underlying_prices:
         call_payoff = max(0, price -  call_options.iloc[strangle_call].strike) - call_options.iloc[strangle_call].lastPrice
